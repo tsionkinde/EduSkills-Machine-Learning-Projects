@@ -37,3 +37,10 @@ print(classification_report(
     y_pred,
     target_names=iris.target_names
 ))
+new_flower = [[5.1, 3.5, 1.4, 0.2]]
+
+new_flower_scaled = scaler.transform(new_flower)
+
+prediction = knn.predict(new_flower_scaled)
+
+print("Predicted flower:", iris.target_names[prediction[0]])
